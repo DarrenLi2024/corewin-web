@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
 import { useI18n } from '@/lib/i18n';
 
@@ -20,6 +20,30 @@ export default function Navbar() {
   const { t, lang, toggleLang } = useI18n();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const hamburgerRef = useRef<HTMLButtonElement>(null);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [mobileOpen]);
+
+  // Close menu on Escape
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && mobileOpen) {
+        setMobileOpen(false);
+        hamburgerRef.current?.focus();
+      }
+    };
+    window.addEventListener('keydown', handleKey);
+    return () => window.removeEventListener('keydown', handleKey);
+  }, [mobileOpen]);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
@@ -53,8 +77,8 @@ export default function Navbar() {
             justifyContent: 'space-between',
           }}
         >
-          {/* Logo */}
-          <a href="#" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
+          {/* Logo — always links to homepage */}
+          <a href="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
               <rect width="32" height="32" rx="8" fill="#00D4FF" fillOpacity="0.1" />
               <rect x="1" y="1" width="30" height="30" rx="7" stroke="#00D4FF" strokeWidth="1" strokeOpacity="0.4" />
@@ -165,6 +189,7 @@ export default function Navbar() {
 
           {/* Mobile hamburger */}
           <button
+            ref={hamburgerRef}
             onClick={() => setMobileOpen(!mobileOpen)}
             className="flex md:hidden"
             style={{
@@ -176,14 +201,37 @@ export default function Navbar() {
             }}
             aria-label={mobileOpen ? (lang === 'en' ? '关闭菜单' : 'Close menu') : (lang === 'en' ? '打开菜单' : 'Open menu')}
             aria-expanded={mobileOpen}
+            aria-controls="mobile-menu"
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </nav>
 
+      {/* Mobile menu backdrop */}
+      <div
+        aria-hidden="true"
+        onClick={() => setMobileOpen(false)}
+        style={{
+          position: 'fixed',
+          inset: 0,
+          zIndex: 98,
+          background: 'rgba(0,0,0,0.6)',
+          backdropFilter: 'blur(4px)',
+          opacity: mobileOpen ? 1 : 0,
+          pointerEvents: mobileOpen ? 'auto' : 'none',
+          transition: 'opacity 0.3s ease',
+        }}
+        className="flex md:hidden"
+      />
+
       {/* Mobile drawer */}
       <div
+        id="mobile-menu"
+        ref={menuRef}
+        role="dialog"
+        aria-modal="true"
+        aria-label={lang === 'en' ? '导航菜单' : 'Navigation menu'}
         style={{
           position: 'fixed',
           top: 72,
@@ -198,6 +246,7 @@ export default function Navbar() {
           display: 'flex',
           flexDirection: 'column',
           gap: 24,
+          overflowY: 'auto',
         }}
         className="flex md:hidden"
       >
