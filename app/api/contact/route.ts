@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
     // TODO: Integrate with email service (SendGrid, Resend, etc.)
     // TODO: Integrate with CRM (HubSpot, Salesforce, etc.)
     // Example:
-    // await sendEmail({ to: 'sales@corewin.com.hk', ...body });
+    // await sendEmail({ to: 'darenli@corewin.com.hk', ...body });
     // await createCRMLead(body);
 
     return NextResponse.json(

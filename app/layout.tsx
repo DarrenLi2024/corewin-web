@@ -107,7 +107,7 @@ export default async function RootLayout({
               contactPoint: [
                 {
                   '@type': 'ContactPoint',
-                  email: 'sales@corewin.com.hk',
+                  email: 'darenli@corewin.com.hk',
                   contactType: 'sales',
                   availableLanguage: ['English', 'Chinese'],
                 },
