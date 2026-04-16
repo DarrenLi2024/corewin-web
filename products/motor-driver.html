@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>电机驱动芯片 | Corewin 创盈科技</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .page-hero { min-height: 45vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; padding: 120px 24px 60px; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 50% 60% at 50% 40%, rgba(168,85,247,0.08) 0%, transparent 70%); }
+    .page-hero-inner { position: relative; z-index: 1; }
+    .breadcrumb { font-size: 13px; color: var(--color-text-muted); margin-bottom: 16px; }
+    .breadcrumb a { color: var(--color-accent); }
+    .page-hero h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 16px; }
+    .page-hero p { font-size: 17px; color: var(--color-text-secondary); max-width: 560px; margin: 0 auto; }
+    .代理品牌-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 16px; justify-content: center; }
+    .代理品牌-chip { padding: 6px 14px; background: var(--color-surface); border-radius: 20px; font-size: 13px; color: var(--color-text-secondary); border: 1px solid var(--color-border); }
+    .driver-types { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    @media (max-width: 900px) { .driver-types { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .driver-types { grid-template-columns: 1fr; } }
+    .driver-card { padding: 24px; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 10px; }
+    .driver-card h4 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #a855f7; }
+    .driver-card p { font-size: 13px; color: var(--color-text-muted); line-height: 1.6; }
+    .driver-card ul { margin-top: 12px; padding-left: 16px; }
+    .driver-card ul li { font-size: 13px; color: var(--color-text-secondary); margin-bottom: 4px; list-style: disc; }
+  </style>
+</head>
+<body>
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" rx="4" stroke="currentColor" stroke-width="2"/><rect x="8" y="8" width="8" height="8" fill="currentColor"/><rect x="20" y="8" width="8" height="8" fill="currentColor" opacity="0.5"/><rect x="8" y="20" width="8" height="8" fill="currentColor" opacity="0.5"/><rect x="20" y="20" width="8" height="8" fill="currentColor"/></svg>
+        <span>CORWIN</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html" class="nav-link">首页</a></li>
+        <li><a href="index.html" class="nav-link active">产品中心</a></li>
+        <li><a href="../applications/index.html" class="nav-link">应用领域</a></li>
+        <li><a href="../index.html#about" class="nav-link">关于我们</a></li>
+        <li><a href="../index.html#contact" class="nav-link">联系我们</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <p class="breadcrumb"><a href="index.html">产品中心</a> / 电机驱动</p>
+      <p class="section-eyebrow" style="color:#a855f7">驱动与控制</p>
+      <h1>电机驱动芯片</h1>
+      <p>涵盖步进电机、直流有刷/无刷电机驱动方案，PWM控制接口，性能可靠、性价比高</p>
+      <div class="代理品牌-row">
+        <span class="代理品牌-chip">率能科技 LeadPower</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title" style="font-size:28px;margin-bottom:32px">驱动芯片产品线</h2>
+      <div class="driver-types">
+        <div class="driver-card">
+          <h4>步进电机驱动</h4>
+          <p>PWM微步驱动，内置索引衰减模式，支持1/2~1/256细分</p>
+          <ul><li>电流范围：0.5A-3A</li><li>封装：HTSSOP/QFN</li><li>应用于3D打印机、纺织机械</li></ul>
+        </div>
+        <div class="driver-card">
+          <h4>直流无刷电机驱动(BLDC)</h4>
+          <p>方波/弦波驱动，内置MOSFET，支持PWM/模拟/时钟调速</p>
+          <ul><li>电压范围：6V-36V</li><li>内置MOSFET：3A-10A</li><li>应用于风扇、泵、无人机</li></ul>
+        </div>
+        <div class="driver-card">
+          <h4>直流有刷电机驱动(DC)</h4>
+          <p>双H桥驱动，支持正反转制动，内置保护功能</p>
+          <ul><li>电流范围：1A-15A</li><li>宽电压：5V-36V</li><li>应用于智能门锁、安防镜头</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--color-bg-secondary)">
+    <div class="container" style="text-align:center">
+      <h2 style="font-size:28px;font-weight:700;margin-bottom:16px">获取电机驱动方案</h2>
+      <p style="color:var(--color-text-secondary);margin-bottom:32px">提供参考设计、原理图及demo板支持，欢迎联系我们</p>
+      <a href="../index.html#contact" class="btn btn-primary" style="display:inline-flex;background:#a855f7">联系我们</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo">
+            <svg width="32" height="32" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" rx="4" stroke="currentColor" stroke-width="2"/><rect x="8" y="8" width="8" height="8" fill="currentColor"/><rect x="20" y="8" width="8" height="8" fill="currentColor" opacity="0.5"/><rect x="8" y="20" width="8" height="8" fill="currentColor" opacity="0.5"/><rect x="20" y="20" width="8" height="8" fill="currentColor"/></svg>
+            <span>CORWIN</span>
+          </a>
+          <p class="footer-tagline">精密连接，全球芯片与中国制造</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col"><h4>产品</h4><ul><li><a href="sic.html">SiC 碳化硅</a></li><li><a href="gan.html">GaN 氮化镓</a></li><li><a href="igbt.html">IGBT</a></li><li><a href="mosfet.html">MOSFET</a></li></ul></div>
+          <div class="footer-col"><h4>品牌</h4><ul><li><a href="../index.html#brands">国际代理</a></li><li><a href="../index.html#brands">国产代理</a></li></ul></div>
+          <div class="footer-col"><h4>关于</h4><ul><li><a href="../index.html#about">公司简介</a></li><li><a href="../index.html#contact">联系方式</a></li></ul></div>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>© 2024 Corewin Technology. All rights reserved.</p></div>
+    </div>
+  </footer>
+  <script src="../main.js"></script>
+</body>
+</html>

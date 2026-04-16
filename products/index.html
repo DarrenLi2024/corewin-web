@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>产品中心 | Corewin 创盈科技</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .page-hero {
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      padding: 120px 24px 80px;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 30%, rgba(0,212,170,0.08) 0%, transparent 70%);
+    }
+    .page-hero h1 {
+      font-size: clamp(36px, 6vw, 60px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+    }
+    .page-hero p {
+      font-size: 18px;
+      color: var(--color-text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .product-nav-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 900px) {
+      .product-nav-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .product-nav-grid { grid-template-columns: 1fr; }
+    }
+    .product-nav-card {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 28px;
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      transition: all 250ms ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    .product-nav-card:hover {
+      border-color: var(--color-accent);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+    .product-nav-icon {
+      width: 56px;
+      height: 56px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-accent-dim);
+      border-radius: 10px;
+      color: var(--color-accent);
+    }
+    .product-nav-info h3 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .product-nav-info p {
+      font-size: 13px;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" rx="4" stroke="currentColor" stroke-width="2"/><rect x="8" y="8" width="8" height="8" fill="currentColor"/><rect x="20" y="8" width="8" height="8" fill="currentColor" opacity="0.5"/><rect x="8" y="20" width="8" height="8" fill="currentColor" opacity="0.5"/><rect x="20" y="20" width="8" height="8" fill="currentColor"/></svg>
+        <span>CORWIN</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html" class="nav-link">首页</a></li>
+        <li><a href="index.html" class="nav-link active">产品中心</a></li>
+        <li><a href="../applications/index.html" class="nav-link">应用领域</a></li>
+        <li><a href="../index.html#about" class="nav-link">关于我们</a></li>
+        <li><a href="../index.html#contact" class="nav-link">联系我们</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div style="position:relative;z-index:1">
+      <p class="section-eyebrow">核心产品</p>
+      <h1>功率器件与模拟芯片</h1>
+      <p>覆盖SiC碳化硅、GaN氮化镓、IGBT、MOSFET、电机驱动、信号链模拟芯片的全产品线</p>
+    </div>
+  </div>
+
+  <section class="section" style="background:var(--color-bg-secondary)">
+    <div class="container">
+      <div class="product-nav-grid">
+        <a href="sic.html" class="product-nav-card">
+          <div class="product-nav-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <div class="product-nav-info">
+            <h3>SiC 碳化硅功率器件</h3>
+            <p>650V–1200V SiC肖特基二极管及MOSFET，高效节能</p>
+          </div>
+        </a>
+        <a href="gan.html" class="product-nav-card">
+          <div class="product-nav-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg>
+          </div>
+          <div class="product-nav-info">
+            <h3>GaN 氮化镓功率器件</h3>
+            <p>高频、高效氮化镓HEMT，高功率密度应用</p>
+          </div>
+        </a>
+        <a href="igbt.html" class="product-nav-card">
+          <div class="product-nav-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+          </div>
+          <div class="product-nav-info">
+            <h3>IGBT 模块</h3>
+            <p>600V–1200V工业级IGBT，电机驱动核心器件</p>
+          </div>
+        </a>
+        <a href="mosfet.html" class="product-nav-card">
+          <div class="product-nav-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <div class="product-nav-info">
+            <h3>高低压 MOSFET</h3>
+            <p>Trench / SGT / Super Junction MOSFET，多封装选择</p>
+          </div>
+        </a>
+        <a href="motor-driver.html" class="product-nav-card">
+          <div class="product-nav-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </div>
+          <div class="product-nav-info">
+            <h3>电机驱动芯片</h3>
+            <p>步进/直流无刷电机驱动方案，高性价比</p>
+          </div>
+        </a>
+        <a href="signal-chain.html" class="product-nav-card">
+          <div class="product-nav-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h6M16 12h6M6 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM18 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM6 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM18 16a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
+          </div>
+          <div class="product-nav-info">
+            <h3>信号链与模拟芯片</h3>
+            <p>运放/ADC/DAC/隔离驱动，国产替代优选</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo">
+            <svg width="32" height="32" viewBox="0 0 36 36" fill="none"><rect x="2" y="2" width="32" height="32" rx="4" stroke="currentColor" stroke-width="2"/><rect x="8" y="8" width="8" height="8" fill="currentColor"/><rect x="20" y="8" width="8" height="8" fill="currentColor" opacity="0.5"/><rect x="8" y="20" width="8" height="8" fill="currentColor" opacity="0.5"/><rect x="20" y="20" width="8" height="8" fill="currentColor"/></svg>
+            <span>CORWIN</span>
+          </a>
+          <p class="footer-tagline">精密连接，全球芯片与中国制造</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col"><h4>产品</h4><ul><li><a href="sic.html">SiC 碳化硅</a></li><li><a href="gan.html">GaN 氮化镓</a></li><li><a href="igbt.html">IGBT</a></li><li><a href="mosfet.html">MOSFET</a></li></ul></div>
+          <div class="footer-col"><h4>品牌</h4><ul><li><a href="../index.html#brands">国际代理</a></li><li><a href="../index.html#brands">国产代理</a></li></ul></div>
+          <div class="footer-col"><h4>关于</h4><ul><li><a href="../index.html#about">公司简介</a></li><li><a href="../index.html#contact">联系方式</a></li></ul></div>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>© 2024 Corewin Technology. All rights reserved.</p></div>
+    </div>
+  </footer>
+</body>
+</html>
